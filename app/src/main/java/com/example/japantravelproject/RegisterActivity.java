@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;  // 파이어 베이스 인증
     private DatabaseReference mDatabaseRef; // 실시간 데이터 베이스
-    private EditText mEtEmail, mEtPwd, mEtPwdck;
+    private EditText mEtEmail, mEtPwd, mEtPwdck, mEtName;
     private Button mBtnRegister, mBtnCancel;
 
 
@@ -44,11 +44,13 @@ public class RegisterActivity extends AppCompatActivity {
         mBtnRegister = findViewById(R.id.btn_register);
         mBtnCancel = findViewById(R.id.btn_cancel);
         mEtPwdck = findViewById(R.id.et_pwck);
+        mEtName = findViewById(R.id.et_name);
 
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //회원가입 처리 시작
+                String strName = mEtName.getText().toString();
                 String strEmail = mEtEmail.getText().toString();
                 String strPwd = mEtPwd.getText().toString();
                 String check = mEtPwdck.getText().toString();
@@ -70,6 +72,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
                             Toast.makeText(RegisterActivity.this, "회원가입에 성공했습니다.", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(RegisterActivity.this, "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
                         }
