@@ -22,15 +22,15 @@
         android:id="@+id/et_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
         android:layout_marginBottom="24dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
         android:ems="10"
         android:hint="@string/my_name"
-        android:inputType="textPersonName"
+        android:inputType="text"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/et_email"
-        app:layout_constraintEnd_toEndOf="@+id/check_button" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_pwd"
@@ -68,38 +68,29 @@
         android:hint="@string/my_email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/et_pwd"
-        app:layout_constraintEnd_toStartOf="@+id/check_button"
         app:layout_constraintStart_toStartOf="@+id/et_name" />
 
-    <Button
-        android:id="@+id/check_button"
-        style="@style/defaultButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="97dp"
-        android:text="@string/my_check"
-        app:layout_constraintBaseline_toBaselineOf="@+id/et_email"
-        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <Button
-        android:id="@+id/delete"
+        android:id="@+id/btn_cancel"
         style="@style/defaultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="71dp"
         android:text="@string/my_cancel"
-        app:layout_constraintStart_toEndOf="@+id/join_button"
+        app:layout_constraintStart_toEndOf="@+id/btn_register"
         app:layout_constraintTop_toBottomOf="@+id/et_pwck" />
 
     <Button
-        android:id="@+id/join_button"
+        android:id="@+id/btn_register"
         style="@style/defaultButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:text="@string/my_accession"
-        app:layout_constraintBaseline_toBaselineOf="@+id/delete"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_cancel"
         app:layout_constraintStart_toStartOf="parent" />
 
 

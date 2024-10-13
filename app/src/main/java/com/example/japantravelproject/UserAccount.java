@@ -19,11 +19,10 @@ public class UserAccount {
         return idToken;
     }
 
-    public Void setIdToken(String idToken) {
-        this.idToken = idToken;
-    }
+    public void setIdToken(String idToken) {
+        this.idToken = idToken;}
 
-    private String idToken;
+   //private String idToken;
 
     public String getEmailId() {
         return emailId;

@@ -3,6 +3,7 @@ package com.example.japantravelproject;
 import static android.app.ProgressDialog.show;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,8 +26,9 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;  // 파이어 베이스 인증
     private DatabaseReference mDatabaseRef; // 실시간 데이터 베이스
-    private EditText mEtEmail, mEtPwd;
-    private Button mBtnRegister;
+    private EditText mEtEmail, mEtPwd, mEtPwdck;
+    private Button mBtnRegister, mBtnCancel;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,6 +42,8 @@ public class RegisterActivity extends AppCompatActivity {
         mEtEmail = findViewById(R.id.et_email);
         mEtPwd = findViewById(R.id.et_pwd);
         mBtnRegister = findViewById(R.id.btn_register);
+        mBtnCancel = findViewById(R.id.btn_cancel);
+        mEtPwdck = findViewById(R.id.et_pwck);
 
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +51,12 @@ public class RegisterActivity extends AppCompatActivity {
                 //회원가입 처리 시작
                 String strEmail = mEtEmail.getText().toString();
                 String strPwd = mEtPwd.getText().toString();
+                String check = mEtPwdck.getText().toString();
 
+                if(!strPwd.equals(check)){
+                    Toast.makeText(RegisterActivity.this, "비밀번호가 다릅니다..", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 //Firebase Auth 진행
                 mFirebaseAuth.createUserWithEmailAndPassword(strEmail, strPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -66,6 +75,13 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+        mBtnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }
