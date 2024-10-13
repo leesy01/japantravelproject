@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "669646666770",
+    "firebase_url": "https://japantravelproject-1e24a-default-rtdb.firebaseio.com",
+    "project_id": "japantravelproject-1e24a",
+    "storage_bucket": "japantravelproject-1e24a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669646666770:android:4728f3d84b720837b06ccb",
+        "android_client_info": {
+          "package_name": "com.example.japantravelproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMX0KqD60wZUXVzs3n0y90AuiwplqDLiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
