@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         mBtnRegister = findViewById(R.id.btn_register);
         mBtnCancel = findViewById(R.id.btn_cancel);
         mEtPwdck = findViewById(R.id.et_pwck);
-        mEtName = findViewById(R.id.et_name);
+        mEtName = findViewById(R.id.et_nickname);
 
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
                             account.setIdToken(firebaseUser.getUid());
                             account.setEmailId(firebaseUser.getEmail());
                             account.setPassword(strPwd);
+                            account.setName(strName);
 
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
                             Toast.makeText(RegisterActivity.this, "회원가입에 성공했습니다.", Toast.LENGTH_SHORT).show();

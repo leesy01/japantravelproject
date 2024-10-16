@@ -14,12 +14,12 @@
         android:text="@string/my_string"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/et_name"
+        app:layout_constraintBottom_toTopOf="@+id/et_nickname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/et_name"
+        android:id="@+id/et_nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -68,7 +68,7 @@
         android:hint="@string/my_email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/et_pwd"
-        app:layout_constraintStart_toStartOf="@+id/et_name" />
+        app:layout_constraintStart_toStartOf="@+id/et_nickname" />
 
 
 
