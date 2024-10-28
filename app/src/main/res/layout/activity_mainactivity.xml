@@ -35,22 +35,10 @@
         android:layout_marginBottom="42dp"
         android:text="일정"
         android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/main_traffic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
-
-    <Button
-        android:id="@+id/main_traffic"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="42dp"
-        android:text="대중교통"
-        android:textSize="40dp"
         app:layout_constraintBottom_toTopOf="@+id/main_touristattraction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_schedule" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <Button
         android:id="@+id/main_touristattraction"
@@ -62,17 +50,29 @@
         app:layout_constraintBottom_toTopOf="@+id/main_traveltips"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_traffic" />
+        app:layout_constraintTop_toBottomOf="@+id/main_schedule" />
 
     <Button
         android:id="@+id/main_traveltips"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="42dp"
         android:text="여행 꿀팁"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_Myinformation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_touristattraction" />
+
+    <Button
+        android:id="@+id/main_Myinformation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:text="내 정보"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_touristattraction" />
+        app:layout_constraintTop_toBottomOf="@+id/main_traveltips" />
 </androidx.constraintlayout.widget.ConstraintLayout>
